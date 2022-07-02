@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<form name="myform">
+		Product Name:
+		<input type="text" name="name" placeholder=""> <p>
+		Product details:
+		<textarea name="textarea" cols="30" rows="10"></textarea> <p>
+		Type: <br>
+		<input type="radio" name="type" value="Brand New"> Brand New <br>
+		<input type="radio" name="type" value="Secon Hand"> Secon Hand <br>
+		<input type="radio" name="type" value="Refurbis"> Refurbish <p>
+		Checkbox: <br>
+		<input type="checkbox" name="checkbox" value="Jersey"> Jersey <br>
+		<input type="checkbox" name="checkbox" value="Shirt"> Shirt <br>
+		<input type="checkbox" name="checkbox" value="Trouser"> Trouser <br>
+		<input type="checkbox" name="checkbox" value="Sweater"> Sweater <p>
+		<input type="button" onclick="func()" value="SUBMIT">		
+
+	</form>
+
+
+	<script>
+		var form;
+		function func(){
+			var name = document.myform.name.value;
+			var textarea = document.myform.textarea.value;
+			var type = document.myform.type.value;
+			var checkbox = document.myform;
+			var show = [];
+		
+			var display;
+
+			display = "This is my Output <br>";
+			display += "Name: " + name + "<br>";
+			display += "Textarea: " + textarea + "<br>";
+			display += "Type: " + type + "<br>";
+			
+			for(var i=5; i<checkbox.length-1; i++){
+				if(checkbox.elements[i].checked){
+					show += (checkbox.elements[i].value) + "<br>";
+				}
+			}
+			display += "Checkbox: <br>" + show;
+			form = window.open("", "", "width=400,height=300,top=300,left=400");
+			form.document.write(display);
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	  <form name="myform">
+	  	Full Name:
+	  	<input type="text" name="name" value="" placeholder="Enter your name"> <br>
+	  	Email:
+	  	<input type="email" name="email" value="" placeholder="Enter your email"> <br>
+	  	Hobby:
+	  	<input type="checkbox" class="play" value="Cricket">Cricket
+	  	<input type="checkbox" class="play" value="Football">Football
+	  	<input type="checkbox" class="play" value="Tenis">Tenis <br>
+	  	<input type="button" onclick="connect()" value="Submit">
+	  </form>
+
+	  <script>
+	  	var mywin;
+	  	function connect(){
+	  		var name = document.myform.name.value;
+	  		var email = document.myform.email.value;
+	  		var hobby = document.getElementsByClassName('play');
+	  		var myhobby="";
+
+	  		for(var i in hobby){
+	  			if(hobby[i].checked){
+	  				myhobby += hobby[i].value + " ";
+	  			}
+	  		}
+
+	  		var display="";
+	  		display += "Name: " + name + "<br>"
+	  		display += "Email: " + email + "<br>"
+	  		display += "Hobby: " + myhobby + "<br>"
+	  		
+	  		mywin = window.open("","","width=300,height=300,top=200,left=300")
+	  		mywin.document.write(display);
+	  	}
+	  </script>
+
+</body>
+</html>
